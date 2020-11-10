@@ -1,0 +1,10 @@
+﻿@model IEnumerable<HTTP5101Assignment3.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach(var teacher in Model)
+{
+    <div><a href="/Teacher/Show/@teacher.Teacherid">@teacher.TeacherFname @teacher.TeacherLname</a></div>
+}
