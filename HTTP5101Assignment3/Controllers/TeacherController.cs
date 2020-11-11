@@ -26,8 +26,10 @@ namespace HTTP5101Assignment3.Controllers
         public ActionResult Show(int id)
         {
             TeacherDataController controller = new TeacherDataController();
-            Teacher NewTeacher = controller.FindTeacher(id);
-            return View(NewTeacher);
+            ViewBag.Teacher = controller.FindTeacher(id);
+            ClassDataController ClassController = new ClassDataController();
+            ViewBag.Class = ClassController.FindTeacherClass(id);
+            return View();
         }
     }
 }

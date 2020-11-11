@@ -61,7 +61,7 @@ namespace HTTP5101Assignment3.Controllers
             Conn.Open();
             //Creates a new MySql command that displays all columns from the teachers table
             MySqlCommand cmd = Conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM `teachers` WHERE `teachers`.teacherid=" + id;
+            cmd.CommandText = "SELECT * FROM `teachers` WHERE `teachers`.teacherid = " + id;
 
             MySqlDataReader TeacherResult = cmd.ExecuteReader();
             
@@ -82,6 +82,7 @@ namespace HTTP5101Assignment3.Controllers
                 NewTeacher.Salary = Salary;
             }
 
+            Conn.Close();
             return NewTeacher;
         }
     }

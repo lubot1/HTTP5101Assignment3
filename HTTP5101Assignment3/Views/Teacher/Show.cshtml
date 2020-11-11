@@ -1,9 +1,9 @@
-﻿@model HTTP5101Assignment3.Models.Teacher
+﻿
 @{
     ViewBag.Title = "Show";
 }
 
-<h2>Show Author</h2>
+<h2>Show Teacher</h2>
 <table>
     <tr>
         <th>Teacher Name</th>
@@ -12,10 +12,22 @@
         <th>Salary</th>
     </tr>
     <tr>
-        <td>@Model.TeacherFname @Model.TeacherLname</td>
-        <td>@Model.EmployeeNumber</td>
-        <td>@Model.HireDate</td>
-        <td>@Model.Salary</td>
+        <td>@ViewBag.Teacher.TeacherFname @ViewBag.Teacher.TeacherLname</td>
+        <td>@ViewBag.Teacher.EmployeeNumber</td>
+        <td>@ViewBag.Teacher.HireDate</td>
+        <td>@ViewBag.Teacher.Salary</td>
     </tr>
-
 </table>
+<h3>Classes taught by @ViewBag.Teacher.TeacherFname @ViewBag.Teacher.TeacherLname</h3>
+<ul>
+    @foreach (var Class in ViewBag.Class)
+    {
+    
+        if (Class.ClassName == "")
+        {
+            <li>None</li>
+        }
+    <li>@Class.ClassName</li>
+    }
+</ul>
+
