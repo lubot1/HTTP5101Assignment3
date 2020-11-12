@@ -9,7 +9,7 @@ namespace HTTP5101Assignment3.Models
     {
         public int ClassId;
         public string ClassCode;
-        public int TeacherId;
+        public long TeacherId;
         public DateTime StartDate;
         public DateTime FinishDate;
         public string ClassName;

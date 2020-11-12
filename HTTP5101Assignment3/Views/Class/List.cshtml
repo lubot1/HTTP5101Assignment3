@@ -1,0 +1,11 @@
+﻿@model IEnumerable<HTTP5101Assignment3.Models.Class>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var course in Model) //Cannot use class as a variable name due to it being a reserved word in c#
+{
+    <div><a href="/Class/Show/@course.ClassId">@course.ClassCode @course.ClassName</a></div>
+}
+
