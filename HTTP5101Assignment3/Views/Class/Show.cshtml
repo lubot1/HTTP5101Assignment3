@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show Class</h2>
+
+<table>
+    <tr>
+        <th>Class ID</th>
+        <th>Class Code</th>
+        <th>Class Name</th>
+        <th>Teacher</th>
+        <th>Start Date</th>
+        <th>Finish Date</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.Class.ClassId</td>
+        <td>@ViewBag.Class.ClassCode</td>
+        <td>@ViewBag.Class.ClassName</td>
+        <td>@ViewBag.Teacher.TeacherFname @ViewBag.Teacher.TeacherLname</td>
+        <td>@ViewBag.Class.StartDate</td>
+        <td>@ViewBag.Class.FinishDate</td>
+    </tr>
+</table>
+
