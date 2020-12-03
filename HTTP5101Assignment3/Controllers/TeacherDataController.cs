@@ -90,5 +90,44 @@ namespace HTTP5101Assignment3.Controllers
             Conn.Close();
             return NewTeacher;
         }
+
+        /// <summary>
+        /// Function to delete teacher entries in database
+        /// </summary>
+        /// <param name="id">Teacher id that will be deleted</param>
+        [HttpPost]
+        public void DeleteTeacher(int id)
+        {
+            MySqlConnection Conn = School.AccessDatabase();
+            //Opens connection to the database
+            Conn.Open();
+            //Creates a new MySql command object
+            MySqlCommand cmd = Conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM `teachers` WHERE id=@id";
+            //Adds value of id to query safely
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            Conn.Close();
+        }
+        //Function to add Teachers
+        /// <summary>
+        /// Adds a teacher to the database using data provided in a form
+        /// </summary>
+        /// <param name="NewTeacher"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public Teacher AddTeacher(Teacher NewTeacher)
+        {
+            MySqlConnection Conn = School.AccessDatabase();
+            //Opens connection to the database
+            Conn.Open();
+            //Creates a new MySql command object
+            MySqlCommand cmd = Conn.CreateCommand();
+        }
+        {
+
+        }
     }
 }
