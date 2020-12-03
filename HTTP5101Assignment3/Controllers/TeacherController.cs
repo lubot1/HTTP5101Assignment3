@@ -31,5 +31,19 @@ namespace HTTP5101Assignment3.Controllers
             ViewBag.Class = ClassController.FindTeacherClass(id);
             return View();
         }
+        // POST : /Teacher/Delete/{id}
+        public ActionResult Delete(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            controller.DeleteTeacher(id);
+            return RedirectToAction("List");
+        }
+
+        public ActionResult Add()
+        {
+            TeacherDataController controller = new TeacherDataController();
+
+            return View();
+        }
     }
 }
