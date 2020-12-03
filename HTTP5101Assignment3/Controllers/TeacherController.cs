@@ -37,6 +37,7 @@ namespace HTTP5101Assignment3.Controllers
             TeacherDataController controller = new TeacherDataController();
             controller.DeleteTeacher(id);
             return RedirectToAction("List");
+
         }
 
         public ActionResult Add()
